@@ -291,6 +291,20 @@ __register_helper(
     max_episode_steps=1000,
 )
 
+__register_helper(
+    env_id='SafetyCartPole-v0',
+    entry_point='safety_gymnasium.tasks.safe_velocity.safety_cartpole_v0:SafetyCartPoleEnv',
+    max_episode_steps=1000,
+    reward_threshold=6000.0,
+)
+
+__register_helper(
+    env_id='SafetyInvertedPendulum-v0',
+    entry_point='safety_gymnasium.tasks.safe_velocity.safety_inverted_pendulum_v0:SafetyInvertedPendulumEnv',
+    max_episode_steps=1000,
+    reward_threshold=6000.0,
+)
+
 
 def __combine_multi(tasks, agents, max_episode_steps):
     """Combine tasks and agents together to register environment tasks."""
